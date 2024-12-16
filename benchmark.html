@@ -1,0 +1,31 @@
+<span log>Click the button to analyze your PC</span><br>
+<img src="https://th.bing.com/th/id/R.298ebad8fd8512e5c306895954a1d33d?rik=7msjck%2bL3bjSzw&pid=ImgRaw&r=0"><br><button onclick="analyze()">
+Analyze
+</button><script>log = (e) => {
+  document.querySelector("[log]").innerText = e
+}
+async function analyze() {
+	log("Analyzing...")
+	document.querySelector("img").style.display = "block";
+	await new Promise(resolve => setTimeout(resolve, 500));
+var dist = []
+for (var j = 0; j < 20; j++) {
+  var date = Date.now()
+  for (var i = 0; i < 1000000000; i++) {
+    var q = 1 + 2
+  }
+  var d2 = Date.now()
+  dist.push((d2-date).toString())
+}
+var avg = 0;
+for (var i in dist) {
+	avg += Number(dist[i]);
+	console.log(dist[i])
+}
+avg /= 20;
+document.querySelector("img").style.display = "none";
+log("On average, your computer took "+avg+"ms to complete 1 billion operations.")
+}</script><style>img {
+	width: 100px;
+	display: none;
+}</style>
